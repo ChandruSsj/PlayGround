@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffdb7c" />
+  <title>Shinchan & Shiro: Runaway Express</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell" aria-label="Shinchan and Shiro endless runner game">
+    <canvas id="game" aria-label="Game scene"></canvas>
+    <div class="topbar">
+      <a class="brand" href="#" aria-label="Shinchan and Shiro Runaway Express">
+        <span class="brand-mark">し</span><span>SHINCHAN <i>&amp;</i> SHIRO</span>
+      </a>
+      <div class="top-right"><span class="sound-label">SOUND</span><button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♪</button><button id="pauseBtn" class="icon-btn" aria-label="Pause game">Ⅱ</button></div>
+    </div>
+    <section class="hud" id="hud" hidden>
+      <div class="hud-stat distance-stat"><span class="eyebrow">DISTANCE</span><strong id="distance">000</strong><small>m</small></div>
+      <div class="hud-stat treat-stat"><span class="treat-icon">★</span><strong id="treats">0</strong><span class="eyebrow">GOLD STARS</span></div>
+      <div class="mom-meter"><div class="mom-avatar">👩🏻</div><div class="meter-copy"><span class="eyebrow">MOM'S PATIENCE</span><div class="meter-track"><i id="momBar"></i></div></div><span class="meter-emoji">😤</span></div>
+    </section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <section class="screen welcome" id="welcome">
+      <div class="sunburst"></div>
+      <div class="welcome-copy">
+        <div class="kicker"><span>野原家 presents</span><b>★</b><span>the great escape</span></div>
+        <h1>RUNAWAY<br/><em>EXPRESS!</em></h1>
+        <p class="subtitle">Shinchan and Shiro are <strong>SO</strong> busted.</p>
+        <p class="intro">Dodge the chaos. Grab the stars.<br/>Don't let Mom catch you!</p>
+        <button id="playBtn" class="play-btn"><span>LET'S RUN!</span><b>➜</b></button>
+        <div class="controls-hint"><span>← →</span> SWITCH LANES <i>·</i> <span>↑</span> JUMP <i>·</i> <span>↓</span> SLIDE</div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="hero-shout">Ehehehe!</div><div class="hero-shin">😜</div><div class="hero-shiro">🐕</div><div class="hero-mom">😠</div><div class="speed-lines"></div></div>
+      <div class="corner-note">A NOHARA FAMILY ADVENTURE</div>
+    </section>
+    <section class="screen pause-screen" id="pauseScreen" hidden>
+      <div class="dialog-card"><div class="dialog-sticker">⏸</div><p class="kicker">TIME OUT!</p><h2>Catch your breath.</h2><p>Mom's still right behind you...</p><button class="play-btn" id="resumeBtn"><span>BACK TO IT</span><b>➜</b></button></div>
+    </section>
+    <section class="screen result-screen" id="resultScreen" hidden>
+      <div class="dialog-card"><div class="dialog-sticker" id="resultSticker">💥</div><p class="kicker" id="resultKicker">MOM CAUGHT YOU!</p><h2 id="resultTitle">Bonk! Bonk!</h2><p id="resultDesc">That was a very silly run.</p><div class="result-stats"><div><strong id="finalDistance">0m</strong><span>DISTANCE</span></div><div><strong id="finalTreats">0</strong><span>STARS</span></div></div><button class="play-btn" id="againBtn"><span>RUN IT BACK!</span><b>↻</b></button></div>
+    </section>
+    <div class="mobile-controls" id="mobileControls" hidden><button data-action="left" aria-label="Move left">◀</button><button data-action="jump" aria-label="Jump">▲</button><button data-action="slide" aria-label="Slide">▼</button><button data-action="right" aria-label="Move right">▶</button></div>
+    <footer class="game-footer"><span>SHINCHAN &amp; SHIRO: RUNAWAY EXPRESS</span><span>BEST: <b id="bestScore">0</b> m</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
