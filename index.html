@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101b2c" />
+  <title>Shinchan & Shiro: Rail Dash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game-canvas" aria-label="3D endless runner game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Rail Dash home"><span class="brand-icon">✦</span> RAIL<span>DASH</span></a>
+      <div class="top-right"><span class="sound-label">SOUND</span><button id="sound-btn" class="sound-button" aria-label="Toggle sound">♫</button><button id="pause-btn" class="pause-button" aria-label="Pause game"><span></span><span></span></button></div>
+    </header>
+    <section class="hud" id="hud" aria-live="polite">
+      <div class="hud-score"><span class="eyebrow">DISTANCE</span><strong id="distance">000</strong><small>m</small></div>
+      <div class="hud-coins"><span class="coin-glyph">●</span><strong id="coins">0</strong></div>
+      <div class="hud-best">BEST <strong id="best">0</strong></div>
+    </section>
+    <div id="toast" class="toast"></div>
+    <section class="overlay intro" id="intro-screen">
+      <div class="intro-copy">
+        <div class="kicker"><span class="kicker-dot"></span> CRAYON KID, FULL SPEED</div>
+        <h1>RAIL<br><em>DASH!</em></h1>
+        <p class="subtitle">Shinchan &amp; Shiro are<br>on the run. Catch them!</p>
+        <div class="character-pills"><span class="pill shin-pill"><i></i> SHINCHAN</span><span class="pill shiro-pill"><i></i> SHIRO</span></div>
+        <button id="play-btn" class="primary-button"><span>LET'S RUN</span><b>→</b></button>
+        <div class="controls-hint"><span>←</span><span>→</span> MOVE <i>•</i> <span>↑</span> JUMP <i>•</i> <span>↓</span> SLIDE</div>
+      </div>
+      <div class="intro-tagline">A LITTLE MISCHIEF<br>GOES A LONG WAY <span>↗</span></div>
+      <div class="menu-character-label">SHINCHAN <span>+ HIS BEST BUD</span></div>
+    </section>
+    <section class="overlay result-screen hidden" id="result-screen">
+      <div class="result-card">
+        <div class="result-eyebrow">OH NO! THAT WAS CLOSE</div>
+        <h2>WIPEOUT!</h2>
+        <p>Shiro says... <em>one more run?</em></p>
+        <div class="result-stats"><div><span>DISTANCE</span><strong id="final-distance">0<small>m</small></strong></div><div><span>COINS</span><strong id="final-coins">0</strong></div><div><span>BEST RUN</span><strong id="final-best">0<small>m</small></strong></div></div>
+        <button id="retry-btn" class="primary-button"><span>RUN IT BACK</span><b>↻</b></button>
+        <button id="home-btn" class="text-button">BACK TO MENU</button>
+      </div>
+    </section>
+    <section class="overlay pause-screen hidden" id="pause-screen">
+      <div class="pause-card"><div class="pause-icon">Ⅱ</div><div class="result-eyebrow">TAKE YOUR TIME</div><h2>PAUSED</h2><p>Shiro's catching his breath.</p><button id="resume-btn" class="primary-button"><span>KEEP RUNNING</span><b>→</b></button><button id="quit-btn" class="text-button">END THIS RUN</button></div>
+    </section>
+    <div class="mobile-controls" id="mobile-controls"><button data-action="left" aria-label="Move left">‹</button><div><button data-action="up" aria-label="Jump">↑</button><button data-action="down" aria-label="Slide">↓</button></div><button data-action="right" aria-label="Move right">›</button></div>
+    <footer class="footer"><span>© RAIL DASH CLUB</span><span>RUN FREE. STAY SILLY.</span></footer>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
